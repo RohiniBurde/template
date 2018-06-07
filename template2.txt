@@ -1,0 +1,45 @@
+{
+      	"heat_template_version": "2013-05-23",
+      	"description": "Simple template disha",
+      	"parameters": {
+      		"image_id": {
+      			"type": "string",
+      			"description": "Image to be used for compute instance",
+      			"label": "Image ID",
+      			"default": "c0ea3ff1-432e-4650-8a1b-372a80b2d2be"
+      		},
+      		"net_id": {
+      			"type": "string",
+      			"description": "The network to be used",
+      			"label": "Network UUID",
+      			"default": "fd59a8ea-51a9-4757-b95d-3d428b4ce04e"
+      		},
+      		"instance_type": {
+      			"type": "string",
+      			"description": "Type of instance (flavor) to be used",
+      			"label": "Instance Type",
+      			"default": "s1.medium"
+      		}
+      	},
+      	"resources": {
+      		"my_instance": {
+      			"type": "OS::Nova::Server",
+      			"properties": {
+      				"image": {
+      					"get_param": "image_id"
+      				},
+      				"flavor": {
+      					"get_param": "instance_type"
+      				},
+
+      				"networks": [{
+      					"network": {
+      						"get_param": "net_id"
+      					}
+      				}]
+      			}
+      		}
+      	}
+}
+JSON
+}
