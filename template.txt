@@ -6,7 +6,7 @@
       			"type": "string",
       			"description": "Image to be used for compute instance",
       			"label": "Image ID",
-      			"default": "af3d8419-5dd1-4f9f-959d-2ed72236ab73"
+      			"default": "c722f796-990a-42cf-badc-4a3c86563509"
       		},
       		"net_id": {
       			"type": "string",
